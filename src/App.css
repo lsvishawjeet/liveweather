@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(20deg,  #87CEEB, rgb(243, 241, 209));
+  background-repeat: no-repeat;
+  background-color: #87CEEB;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.screen{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.box{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  width: 60vw;
+  height: 80vh;
+  /* background-color: aquamarine; */
+}
+.extra{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+}
+.extrainfo{
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  margin-bottom: 20px;
+}
+.temperature{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* background-color: #87CEEB; */
+  margin: 0;
+  padding: 0;
+}
+.temp{
+  font-size: 7vw;
+  margin: 0;
+  padding: 0;
+}
+.tempdeg{
+  font-size: 2.5vw;
+  height: 7vw;
+}
+.minmax{
+  text-align: center;
+  word-spacing: 50px;
+  margin-top: -10px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.cityname{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 2vw;
+}
+.iconweather{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #87CEEB; */
+  margin: -5px;
+}
+.WiDaySunny{
+    animation: mymove 8s infinite linear;
+  }
+  
+  @keyframes mymove {
+    30% {transform: rotate(30deg);}
+  }
+
+.upcomingdays{
+  /* background-color: bisque; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.day1{
+  display: inline-block;
+  text-align: center;
+  border: 1px solid black;
+  padding: 15px;
+}
+.extra2{
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 0em;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+@media only screen and (max-width: 912px) {
+  body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
   }
-  to {
-    transform: rotate(360deg);
+  .main{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    /* background-color: aquamarine; */
   }
-}
+  .extra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+  }
+  .extrainfo{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+  }
+  .temperature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: #87CEEB; */
+    margin: 0;
+    padding: 0;
+  }
+  .temp{
+    font-size: 15vh;
+    margin: 0;
+    padding: 0;
+  }
+  .tempdeg{
+    font-size: 3vh;
+    height: 7vh;
+  }
+  .minmax{
+    text-align: center;
+    word-spacing: 50px;
+    margin-top: -10px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 3vh;
+  }
+  .cityname{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 4vh;
+  }
+  .iconweather{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #87CEEB; */
+    margin: -5px;
+  }
+  .WiDaySunny{
+      animation: mymove 8s infinite linear;
+    }
+    
+    @keyframes mymove {
+      30% {transform: rotate(30deg);}
+    }
+  
+  .upcomingdays{
+    /* background-color: bisque; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .day1{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    padding: 2px;
+    margin-bottom: 5px;
+  }
+  .extra2{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    line-height: 0em;
+  }
+  }
