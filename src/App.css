@@ -126,6 +126,14 @@ body{
     0% {transform: rotate(-45deg);}
     100% {transform: rotate(-40deg);}
   }
+  .WiDaySunny3{
+    animation: mymove3 3s infinite linear;
+    animation-direction: alternate;
+  }
+  @keyframes mymove3 {
+    0% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+  }
 
 .upcomingdays{
   /* background-color: bisque; */

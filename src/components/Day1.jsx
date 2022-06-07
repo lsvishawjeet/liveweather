@@ -13,26 +13,26 @@ const Day1 = (props)=>{
 
 if(props.hi <= 30){
   if((hour > 9 && hour <= 17)){
-      return(<WiDaySunny size={70} color="#000" className="WiDaySunny" />)
+      return(<WiDaySunny size={55} color="#000" className="WiDaySunny3" />)
   }
   else{
-      return(<WiDaySunny size={70} color="#FFFFFF" className="WiDaySunny" />)
+      return(<WiDaySunny size={55} color="#FFFFFF" className="WiDaySunny3" />)
   }
 }
 else if(props.hi > 30 && props.hi < 70){
   if((hour > 9 && hour <= 17)){
-      return(<WiDayCloudy size={70} color="#000" className="WiDaySunny" />)
+      return(<WiDayCloudy size={55} color="#000" className="WiDaySunny3" />)
   }
   else{
-      return(<WiDayCloudy size={70} color="#FFFFFF" className="WiDaySunny" />)
+      return(<WiDayCloudy size={55} color="#FFFFFF" className="WiDaySunny3" />)
   }
 }
 else if(props.hi >=70){
   if((hour > 9 && hour <= 17)){
-      return(<WiCloudy size={70} color="#000" className="WiDaySunny" />)
+      return(<WiCloudy size={55} color="#000" className="WiDaySunny3" />)
   }
   else{
-      return(<WiCloudy size={70} color="#FFFFFF" className="WiDaySunny" />)
+      return(<WiCloudy size={55} color="#FFFFFF" className="WiDaySunny3" />)
   }
   
 }
