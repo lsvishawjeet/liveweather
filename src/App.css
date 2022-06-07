@@ -1,13 +1,42 @@
 *{
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
+.bgchange1{
+  background-image: linear-gradient(20deg,  #87CEEB, rgb(243, 241, 209));
+  color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgchangenight{
+  background-image: url(images/shooting-sta.svg);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgchangemorning{
+  background-image: url(images/rise.svg);
+ color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgchangeday{
+  background-image: url(images/day.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgchangeevening{
+  background-image: url(images/sunset.svg);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body{
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(20deg,  #87CEEB, rgb(243, 241, 209));
   background-repeat: no-repeat;
-  background-color: #87CEEB;
 }
 
 .screen{
@@ -25,8 +54,8 @@ body{
   align-items: center;
 }
 .main{
-  width: 60vw;
-  height: 80vh;
+  width: 60%;
+  height: 90%;
   /* background-color: aquamarine; */
 }
 .extra{
@@ -79,15 +108,26 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #87CEEB; */
   margin: -5px;
 }
 .WiDaySunny{
-    animation: mymove 8s infinite linear;
+    animation: mymove 3s infinite linear;
+    animation-direction: alternate;
+    z-index: 100;
+    background: transparent;
   }
   
   @keyframes mymove {
-    30% {transform: rotate(30deg);}
+    0% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+  }
+  .WiDaySunny2{
+    animation: mymove2 3s infinite linear;
+    animation-direction: alternate;
+  }
+  @keyframes mymove2 {
+    0% {transform: rotate(-45deg);}
+    100% {transform: rotate(-40deg);}
   }
 
 .upcomingdays{
@@ -100,8 +140,24 @@ body{
 .day1{
   display: inline-block;
   text-align: center;
-  border: 1px solid black;
+  background-color: transparent;
   padding: 15px;
+  font-size: 1.1vw;
+  position: relative;
+  z-index: 1;
+}
+.day1::after{
+  content: "";
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: 2;
+  box-shadow: 0px 0px 20px 0px white;
+  color: white;
 }
 .extra2{
   display: flex;
@@ -116,7 +172,7 @@ body{
 
 
 
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 700px) {
   body{
     margin: 0;
     padding: 0;
@@ -126,7 +182,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 80%;
+    height: 90%;
     /* background-color: aquamarine; */
   }
   .extra{
@@ -150,7 +206,7 @@ body{
     padding: 0;
   }
   .temp{
-    font-size: 15vh;
+    font-size: 13vh;
     margin: 0;
     padding: 0;
   }
@@ -189,6 +245,14 @@ body{
     @keyframes mymove {
       30% {transform: rotate(30deg);}
     }
+    .WiDaySunny2{
+      animation: mymove2 3s infinite linear;
+      animation-direction: alternate;
+    }
+    @keyframes mymove2 {
+      0% {transform: rotate(-45deg);}
+      100% {transform: rotate(-40deg);}
+    }
   
   .upcomingdays{
     /* background-color: bisque; */
@@ -202,8 +266,22 @@ body{
     display: inline-block;
     text-align: center;
     border: 1px solid black;
+    position: relative;
     padding: 2px;
     margin-bottom: 5px;
+    font-size: 3vw;
+  }
+  .day1::after{
+    content: "";
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+    box-shadow: 0px 0px 20px 0px white;
   }
   .extra2{
     display: flex;
@@ -213,3 +291,128 @@ body{
     line-height: 0em;
   }
   }
+
+
+
+
+
+
+
+  @media only screen and (max-width: 300px) {
+    body{
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
+    .main{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 95%;
+      /* background-color: aquamarine; */
+    }
+    .extra{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3vh;
+    }
+    .extrainfo{
+      display: flex;
+      align-items: center;
+      justify-content:space-evenly;
+    }
+    .temperature{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      /* background-color: #87CEEB; */
+      margin: 0;
+      padding: 0;
+    }
+    .temp{
+      font-size: 13vh;
+      margin: 0;
+      padding: 0;
+    }
+    .tempdeg{
+      font-size: 3vh;
+      height: 7vh;
+    }
+    .minmax{
+      text-align: center;
+      margin-top: -10px;
+      /* background-color: yellow; */
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-size: 2vh;
+    }
+    .cityname{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+      font-size: 4vh;
+    }
+    .iconweather{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background-color: #87CEEB; */
+      margin: -5px;
+    }
+    .WiDaySunny{
+        animation: mymove 8s infinite linear;
+      }
+      
+      @keyframes mymove {
+        30% {transform: rotate(30deg);}
+      }
+      .WiDaySunny2{
+        animation: mymove2 3s infinite linear;
+        animation-direction: alternate;
+      }
+      @keyframes mymove2 {
+        0% {transform: rotate(-45deg);}
+        100% {transform: rotate(-40deg);}
+      }
+    
+    .upcomingdays{
+      /* background-color: bisque; */
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .day1{
+      display: inline-block;
+      text-align: center;
+      border: 1px solid black;
+      position: relative;
+      padding: 2px;
+      margin-bottom: 5px;
+      font-size: 3vw;
+    }
+    .day1::after{
+      content: "";
+      background-color: rgb(255, 255, 255);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.2;
+      z-index: -1;
+      box-shadow: 0px 0px 20px 0px white;
+    }
+    .extra2{
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      line-height: 0em;
+    }
+    }
