@@ -13,7 +13,7 @@ const Hello = (props)=>{
 
   if(props.hi <= 30){
     if(hour <= 18 && hour > 5){
-        return(<WiDaySunny size={200} color="#000" className="WiDaySunny" />)
+        return(<WiDaySunny size={200} color="#FFFFFF" className="WiDaySunny" />)
     }
     else{
         return(<WiMoonWaningCrescent3 size={200} color="#FFFFFF" className="WiDaySunny2" />)

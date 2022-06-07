@@ -12,6 +12,11 @@ import { WiDayCloudy } from "weather-icons-react";
 import { WiCloud } from "weather-icons-react";
 import Cloud from "@mui/icons-material/Cloud";
 import Hello from "./Hello";
+import Day1 from "./Day1";
+import Day2 from "./Day2";
+import Day3 from "./Day3";
+import Day4 from "./Day4";
+import axios from "axios";
 
 
 const Const1 = () => {
@@ -24,6 +29,7 @@ const Const1 = () => {
   const [maxtemp, setmaxtemp] = useState([]);
   const [wind, setwind] = useState([]);
   const [humidity, sethumidity] = useState([]);
+  const [cloud, setcloud] = useState([]);
 
   const [day1date, setday1date] = useState([]);
   const [day1temp, setday1temp] = useState([]);
@@ -66,6 +72,7 @@ const Const1 = () => {
     setmaxtemp(weather2.main.temp_max);
     setwind(weather2.wind.speed);
     sethumidity(weather2.main.humidity);
+    setcloud(weather2.clouds.all)
   };
 
 
@@ -121,25 +128,28 @@ useEffect(()=>{
   }, [lat, long]);
 
     const date = new Date();
-    const hour = date.getHours();
-    let colour = [];
-    if((hour >= 6 && hour <= 10)){
-        colour.push("bgchangemorning");
+    const hour2 = date.getHours();
+    let hour = parseInt(hour2);
+    console.log(hour)
+    let color = [];
+    if((hour >= 5 && hour <= 9)){
+      color.push("bgchangemorning");
     }
-    else if((hour > 10 && hour <= 17)){
-      colour.push("bgchangeday");
+    else if((hour > 9 && hour <= 17)){
+      color.push("bgchangeday");
     }
     else if((hour > 18 && hour < 19)){
-      colour.push("bgchangeevening");
+      color.push("bgchangeevening");
+      console.log(5555);
     }
-    else if((hour > 18 && hour < 19)){
-      colour.push("bgchangeevening");
+    else if((hour > 19 && hour <= 24)){
+      color.push("bgchangenight");
+      console.log(5555);
     }
-
   
   return (
     <>
-    <div className={colour}>
+    <div className={color}>
        <div className="screen">
          <div className="box">
            <div className="main">
@@ -151,17 +161,17 @@ useEffect(()=>{
                  <ArrowUpwardIcon/>{maxtemp}&#8451;  &#160;<ArrowDownwardIcon/>{mintemp}&#8451;
              </div>
              <div className="iconweather">
-                <Hello hi={day1cloud}/>
+                <Hello hi={cloud}/>
               
              </div>
              <div className="extrainfo">
                <span className="extra"><AirIcon/>&#160;{wind}m/s</span><span  className="extra"><WavesIcon/>&#160;{humidity} &#160;&#160;&#160;</span>
                </div>
              <div className="upcomingdays">
-                 <div className="day1"><WiDaySunny size={60} color="#000" className="WiDaySunny" /><br/><span className="extra2"></span>{day1temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day1wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day1cloud}</span><span  className="extra2"><WavesIcon/>&nbsp;{day1humidity}</span></div>
-                 <div className="day1"><WiDaySunny size={60} color="#000" className="WiDaySunny" /><br/><span className="extra2"></span>{day2temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day2wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day2cloud}</span><span  className="extra2"><WavesIcon/>&nbsp;{day2humidity}</span></div>
-                 <div className="day1"><WiDaySunny size={60} color="#000" className="WiDaySunny" /><br/><span className="extra2"></span>{day3temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day3wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day3cloud}</span><span  className="extra2"><WavesIcon/>&nbsp;{day3humidity}</span></div>
-                 <div className="day1"><WiDaySunny size={60} color="#000" className="WiDaySunny" /><br/><span className="extra2"></span>{day4temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day4wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day4cloud}</span><span  className="extra2"><WavesIcon/>&nbsp;{day4humidity}</span></div>
+                 <div className="day1"><Day1 hi={day1cloud}/><br/><span className="extra2"></span>{day1temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day1wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day1cloud}%</span><span  className="extra2"><WavesIcon/>&nbsp;{day1humidity}</span></div>
+                 <div className="day1"><Day2 hi={day2cloud}/><br/><span className="extra2"></span>{day2temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day2wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day2cloud}%</span><span  className="extra2"><WavesIcon/>&nbsp;{day2humidity}</span></div>
+                 <div className="day1"><Day3 hi={day3cloud}/><br/><span className="extra2"></span>{day3temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day3wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day3cloud}%</span><span  className="extra2"><WavesIcon/>&nbsp;{day3humidity}</span></div>
+                 <div className="day1"><Day4 hi={day4cloud}/><br/><span className="extra2"></span>{day4temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day4wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day4cloud}%</span><span  className="extra2"><WavesIcon/>&nbsp;{day4humidity}</span></div>
                  {/* <div className="day1"><WiDaySunny size={60} color="#000" className="WiDaySunny" /><br/><span className="extra2"></span>{day5temp}<br/><span  className="extra2"></span><span className="extra2"><AirIcon/>&nbsp;{day5wind} m/s</span><span  className="extra2"><CloudIcon/>&nbsp;{day5cloud}</span><span  className="extra2"><WavesIcon/>&nbsp;{day5humidity}</span></div> */}
              </div>
            </div>
@@ -172,16 +182,5 @@ useEffect(()=>{
   );
 };
 
-// const Weathericons = ()=>{
-//   if(day1cloud <= 30){
-//     return(<WiDaySunny size={200} color="#000" className="WiDaySunny" />)
-//   }
-//   else if(day1cloud > 30 && day1cloud < 70){
-//     return(<WiDayCloudy size={200} color="#000" className="WiDaySunny" />)
-//   }
-//   else if(day1cloud >=70){
-//    return(<WiCloud size={200} color="#000" className="WiDaySunny" />)
-//   }
-// }
 export default Const1;
 

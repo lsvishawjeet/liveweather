@@ -3,12 +3,6 @@
   padding: 0;
   overflow: hidden;
 }
-.bgchange1{
-  background-image: linear-gradient(20deg,  #87CEEB, rgb(243, 241, 209));
-  color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .bgchangenight{
   background-image: url(images/shooting-sta.svg);
   color: white;
@@ -16,7 +10,7 @@
   background-size: cover;
 }
 .bgchangemorning{
-  background-image: url(images/rise.svg);
+  background-image: url(images/rise.jpg);
  color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,7 +30,6 @@
 body{
   margin: 0;
   padding: 0;
-  background-repeat: no-repeat;
 }
 
 .screen{
@@ -63,6 +56,9 @@ body{
   align-items: center;
   justify-content: center;
   font-size: 1.5vw;
+}
+.extra2{
+  padding: 20px;
 }
 .extrainfo{
   display: flex;
@@ -92,6 +88,7 @@ body{
   text-align: center;
   word-spacing: 50px;
   margin-top: -10px;
+  font-size: 1.5vw;
   /* background-color: yellow; */
   display: flex;
   justify-content:center;
