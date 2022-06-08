@@ -66,6 +66,7 @@ const Const1 = () => {
   const current = async () => {
     const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a1eef401294b38b4219848d5747e7b15&units=metric`);
     const weather2 = await weather.json();
+    console.log(weather2);
     setcity(weather2.name);
     settemp(weather2.main.temp);
     setmintemp(weather2.main.temp_min);
