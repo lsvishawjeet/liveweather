@@ -1,6 +1,6 @@
 {
   "name": "weather",
-  "homepage": "https://lsvishawjeet.github.io/liveweather",
+  "homepage": "https://lsvishawjeet.github.io/weather",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
