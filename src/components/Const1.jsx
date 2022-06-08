@@ -136,10 +136,10 @@ useEffect(()=>{
     if((hour >= 5 && hour <= 9)){
       color.push("bgchangemorning");
     }
-    else if((hour > 9 && hour <= 17)){
+    else if((hour > 9 && hour <= 18)){
       color.push("bgchangeday");
     }
-    else if((hour > 18 && hour < 19)){
+    else if((hour > 18 && hour <= 19)){
       color.push("bgchangeevening");
       console.log(5555);
     }
