@@ -12,7 +12,7 @@ const Hello = (props)=>{
     const hour = date.getHours();
 
   if(props.hi <= 30){
-    if(hour <= 18 && hour > 5){
+    if(hour <= 5 && hour > 19){
         return(<WiDaySunny size={200} color="#FFFFFF" className="WiDaySunny" />)
     }
     else{
@@ -20,7 +20,7 @@ const Hello = (props)=>{
     }
   }
   else if(props.hi > 30 && props.hi < 70){
-    if(hour <= 18 && hour > 5){
+    if(hour <= 5 && hour > 19){
         return(<WiDayCloudy size={200} color="#000" className="WiDaySunny" />)
     }
     else{
@@ -28,7 +28,7 @@ const Hello = (props)=>{
     }
   }
   else if(props.hi >=70){
-    if(hour <= 18 && hour > 5){
+    if(hour <= 5 && hour > 19){
         return(<WiCloud size={200} color="#000" className="WiDaySunny" />)
     }
     else{
